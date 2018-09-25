@@ -162,14 +162,15 @@ each(names, function(item, indice){
 */
 
 getUserById = (users,id,cb) => {
-  for(let i = 0; i<users.length; i++){
-    console.log(users[id])
-    if(users[i][id] === users.id)
+  users.forEach(function(num,i,arr){
+    if(arr[i][id] === users.id)
     {
       cb(users[i]);
     }
   }
+);
 }
+
 
 // Do not edit the code below.
 var users = [
