@@ -119,8 +119,15 @@ contains(names, 'Colt', function(result){
 */
 
 uniq = (arr,cb) => {
+  console.log(arr);
   const betterArray = arr.filter((value,i,array) => {
-    return array.indexOf(value) === i;
+    for(let j = array.length - 1; j >= 0;j--){
+      if(value === array[j] && i !== j){
+        console.log(arr);
+        array.splice(j,1);
+      }
+    }
+    return array;
     })
 
 cb(betterArray);
